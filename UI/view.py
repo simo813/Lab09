@@ -13,27 +13,27 @@ class View(ft.UserControl):
         self._controller = None
         # graphical elements
         self._title = None
-        self.txt_name = None
-        self.btn_hello = None
+        self.txt_distanza = None
+        self.btn_analizza = None
         self.txt_result = None
         self.txt_container = None
 
     def load_interface(self):
         # title
-        self._title = ft.Text("Hello World", color="blue", size=24)
+        self._title = ft.Text("Flights Manager", color="blue", size=24)
         self._page.controls.append(self._title)
 
         #ROW with some controls
         # text field for the name
-        self.txt_name = ft.TextField(
-            label="name",
+        self.txt_distanza = ft.TextField(
+            label="Distanza Minima",
             width=200,
-            hint_text="Insert a your name"
+            hint_text="Distanza Minima"
         )
 
         # button for the "hello" reply
-        self.btn_hello = ft.ElevatedButton(text="Hello", on_click=self._controller.handle_hello)
-        row1 = ft.Row([self.txt_name, self.btn_hello],
+        self.btn_analizza = ft.ElevatedButton(text="Analizza Aeroporti", on_click=self._controller.handle_analizza)
+        row1 = ft.Row([self.txt_distanza, self.btn_analizza],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
 
